@@ -31,13 +31,22 @@ sourceSets{
     }
 }
 
-version = '0.7'
+
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-uploadArchives {
-    repositories{
-        flatDir {
-            dirs "../lib"
+apply plugin: 'maven-publish'
+
+publishing {
+    
+    publications {
+        mavenJava(MavenPublication) {
+            version '0.8'
+            groupId 'icraus.vpl'
+            artifactId 'VPLComponent'
+            from components.java
+            
         }
+        
+
     }
 }
 
@@ -78,7 +87,7 @@ uploadArchives {
     
     repositories{
         flatDir {
-            dirs System.getenv("JAVA_LOCAL_REPO")
+            dirs "F:/Important/Code/Graduation_Project/lib"
         }
     }
 }

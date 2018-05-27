@@ -43,9 +43,6 @@ public abstract class Component {
         return childern;
     }
 
-    public void setChildern(ObservableList<Component> childern) {
-        this.childern = childern;
-    }
 
     public Component() {
         statement = new SimpleObjectProperty<>();
@@ -67,24 +64,23 @@ public abstract class Component {
         return ComponentFlags.INSERTABLE_FLAG | ComponentFlags.SELECTABLE_FLAG | ComponentFlags.REMOVABLE_FLAG;
     }
     
-    public ObjectProperty<Statement> getStatement() {
+    public ObjectProperty<Statement> statementProperty() {
         return statement;
     }
 
-    public void setStatement(ObjectProperty<Statement> statement) {
-        this.statement = statement;
+    public Statement getStatement() {
+        return statement.get();
     }
-
+    
     public void setStatement(Statement st) {
         statement.setValue(st);
     }
 
-    public ObjectProperty<Node> getUiDelegate() {
+     public ObjectProperty<Node> uiDelegateProperty() {
         return uiDelegate;
     }
-
-    public void setUiDelegate(ObjectProperty<Node> uiDelegate) {
-        this.uiDelegate = uiDelegate;
+    public Node getUiDelegate() {
+        return uiDelegate.get();
     }
 
     public void setUiDelegate(Node ui) {
@@ -142,18 +138,17 @@ public abstract class Component {
         return hash;
     }
 
+    public ObjectProperty<Component> parentProperty(){
+        return parent;
+    }
     public Component getParent() {
         return parent.getValue();
     }
 
-    public void setParent(ObjectProperty<Component> parent) {
-        this.parent = parent;
-    }
 
     public void setParent(Component _parent) {
         this.parent.setValue(_parent);
     }
-    //TODO DONE add Parent Listner for each addition in children
 
 
 

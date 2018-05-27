@@ -36,7 +36,7 @@ public class SimpleComponentTabbed extends SimpleComponent implements Pageable {
             CodeBlockBody body = blk.getBody();
             body.getChildren().clear();
             for (Component c : getChildern()) {
-                body.getChildren().add(c.getStatement().get());
+                body.getChildren().add(c.getStatement());
             }
         });
         

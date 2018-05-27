@@ -46,7 +46,7 @@ public class ScrollAnchorPane extends ScrollPane implements Selectable {
         double y = 20;
         double x = 150;
         for (Component c : lst) {
-            Node value = c.getUiDelegate().getValue();
+            Node value = c.getUiDelegate();
             value.setLayoutY(y);
             value.setLayoutX(x);
             ((AnchorPane) getContent()).getChildren().add(value);
