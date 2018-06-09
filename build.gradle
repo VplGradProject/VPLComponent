@@ -40,7 +40,6 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             version '0.8'
-            groupId 'icraus.vpl'
             artifactId 'VPLComponent'
             from components.java
             
@@ -90,4 +89,7 @@ uploadArchives {
             dirs "F:/Important/Code/Graduation_Project/lib"
         }
     }
+}
+jfx {
+    runJavaParameter = '-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005'
 }
